@@ -1,0 +1,33 @@
+
+:root {
+
+  --live-indicator-shadow: hsla(0, 79%, 63%, 0.5);
+  --rich-black-fogra-30:   #0a0a0a;
+  --rich-black-fogra-29:   #050505;
+  --live-indicator:        #404040;
+  --oxford-blue-50:         #262626;
+  --oxford-blue:           #121212;
+
+  --light-azure:           #e31635;
+  --off-white:             #d1cccc;
+  --yellow:                hsl(45, 100%, 54%);
+  --white:                 hsl(0, 0%, 100%);
+  --azure:                 #f01414;
+
+
+
+  --ff-inter: "Sora", sans-serif;
+  --section-heading: 40px;
+  --fs-lg:           22px;
+  --fs-md:           17px;
+  --fs-sm:           16px;
+  --fs-x-sm:         14px;
+  
+  --fw-7: 700;
+  --fw-6: 600;
+  --fw-5: 500;
+
+ 
+
+  --px: 120px; 
+}

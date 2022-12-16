@@ -1,0 +1,148 @@
+{% extends "layout.html" %} {% block body %}
+
+<main>
+
+<section class="movies"id="movies">
+<h2 class="bio-title">Find Me The Perfect Movie:)</h2>
+  <h3 class="bio-subtitle">Select the filters and click on the filter button</h3>
+
+<!-----------------------------MOVIES SECTION--------------------------->
+<!------------MOVIES SECTION-CARD/CLOSE-------->
+</section>
+
+<section>
+
+     <input type="number" min="1800" max="2022" class="navbar-form-search2" placeholder="Movies After this Year (Enter Year)" oninvalid="this.setCustomValidity('Please Enter a Minimum Duration in Minutes')" oninput="this.setCustomValidity('')" id="year">
+  <div class="movie">
+  <ul class="ks-cboxtags">
+    <li><input type="checkbox" id="checkboxOne" value="12"><label for="checkboxOne">Adventure</label></li>
+    <li><input type="checkbox" id="checkboxTwo" value="53" checked><label for="checkboxTwo">Thriller</label></li>
+    <li><input type="checkbox" id="checkboxThree" value="10749" checked><label for="checkboxThree">Romance</label></li>
+    <li><input type="checkbox" id="checkboxFour" value="28"><label for="checkboxFour">Action</label></li>
+    <li><input type="checkbox" id="checkboxFive" value="27"><label for="checkboxFive">Horror</label></li>
+    <li><input type="checkbox" id="checkboxSix" value="35" checked><label for="checkboxSix">Comedy</label></li>
+    <li><input type="checkbox" id="checkboxSeven" value="878"><label for="checkboxSeven">Science-Fiction</label></li>
+    <li><input type="checkbox" id="checkboxEight" value="14"><label for="checkboxEight">Fantasy</label></li>
+    <li><input type="checkbox" id="checkboxNine" value="80"><label for="checkboxNine">Crime</label></li>
+    <li class="ks-selected"><input type="checkbox" id="checkboxTen" value="16"><label for="checkboxTen">Animation</label></li>
+  </ul>
+
+</div>
+    <div class="rattting">
+      <input type="radio" name="rating" id="rating-10">
+      <label for="rating-10"></label>
+      <input type="radio" name="rating" id="rating-9">
+      <label for="rating-9"></label>
+      <input type="radio" name="rating" id="rating-8">
+      <label for="rating-8"></label>
+      <input type="radio" name="rating" id="rating-7">
+      <label for="rating-7"></label>
+      <input type="radio" name="rating" id="rating-6">
+      <label for="rating-6"></label>
+      <input type="radio" name="rating" id="rating-5">
+      <label for="rating-5"></label>
+      <input type="radio" name="rating" id="rating-4">
+      <label for="rating-4"></label>
+      <input type="radio" name="rating" id="rating-3">
+      <label for="rating-3"></label>
+      <input type="radio" name="rating" id="rating-2">
+      <label for="rating-2"></label>
+      <input type="radio" name="rating" id="rating-1">
+      <label for="rating-1"></label></div>
+     <ul class="ks-cboxtags">
+       <center><li class="ks-selected"><input type="checkbox" id="age_check" value="adult"><label for="age_check">Adult Movies (For 18+ )</label></li></center></ul>
+
+  
+      <button type="button" onclick="getInputValue();" class="login-form-btn"> Search</button>
+    <script>
+        function getInputValue(){
+          var arr = [] ;
+          var rating=""
+var checkBox = document.getElementById('checkboxTen');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxNine');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxEight');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxSeven');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxSix');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxFive');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxFour');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxThree');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxTwo');
+if(checkBox.checked){arr.push(checkBox.value);}
+var checkBox = document.getElementById('checkboxOne');
+if(checkBox.checked){arr.push(checkBox.value);}
+var ratingstar = document.getElementById('rating-10');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-9');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-8');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-7');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-6');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-5');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-4');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-3');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-2');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+var ratingstar = document.getElementById('rating-1');
+if(ratingstar.checked){rating=rating+ratingstar.id;}
+
+var checkBox = document.getElementById('age_check');
+if(checkBox.checked){var age="above_age";}else{var age="under_age";}
+var year = document.getElementById('year');
+year = year.value;
+if(year==""){year="NONE";}
+if(rating==""){rating="NONE";}
+var genre = arr.join("_");
+if(genre==""){genre="NONE";}
+
+window.location = 
+("/fsearch?genre=" + genre+ "&year="+year+ "&rating="+rating+ "&age="+age);  }
+    </script>
+</section>
+
+</main>
+
+
+
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<h3 class="navbar-brand">Movie<span style="color:red;">Base</span></h3>
+<p class="slogan">MovieBase is a state-of-the-art movie information system that finds you the perfect movie match
+</p>
+<div class="social-link">
+<a href="https://www.twitter.com/">
+<ion-icon name="logo-twitter"></ion-icon>
+</a>
+<a href="https://www.instagram.com/">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
+<a href="https://www.github.com/">
+<ion-icon name="logo-github"></ion-icon>
+</a>
+</div></div>
+<div class="footer-links">
+</div></div>
+<div class="footer-copyright">
+<div class="copyright">
+<p>&copy;2022 MovieBase</p>
+</div>
+
+<div class="wrapper">
+<a href="#">Privacy policy</a>
+<a href="#">Terms and conditions</a>
+</div></div></footer></div>
+{% endblock %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href='https://damn.mostuselessboy.repl.co/assets/images/icon.png' type="image/png">
+<title>ZeusTV</title>
+<link rel="stylesheet" href="https://damn.mostuselessboy.repl.co/assets/css/main.css">
+<link rel="stylesheet" href="https://damn.mostuselessboy.repl.co/assets/css/media_query.css">
+<!-----------------------------FONTS----------------------------->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap" rel="stylesheet"></head>
+  <BODY ondragstart="return false;" ondrop="return false;">
+
+<script data-cfasync="false">
+  (function(r,e,E,m,b){E[r]=E[r]||{};E[r][b]=E[r][b]||function(){
+  (E[r].q=E[r].q||[]).push(arguments)};b=m.getElementsByTagName(e)[0];m=m.createElement(e);
+  m.async=1;m.src=("file:"==location.protocol?"https:":"")+"//s.reembed.com/G-XEVPOn.js";
+  b.parentNode.insertBefore(m,b)})("reEmbed","script",window,document,"api");
+</script>
+<body>
+<div class="container">
+<header class="">
+<div class="navbar">
+<button class="navbar-menu-btn">
+<span class="one"></span>
+<span class="two"></span>
+<span class="three"></span>
+</button>
+<!-----------------------------LOGO----------------------------->
+
+<a href="/" class="navbar-brand"><h1>Movie<span style="color:red;">Base</span></h1></a>
+
+<!-----------------------------NAVBAR--------------------------->
+<nav class="">
+<ul class="navbar-nav">
+<li> <a href="/#movies" class="navbar-link">Movies</a> </li>
+<li> <a href="/#category" class="navbar-link">Category</a> </li>
+<li> <a href="/#tv" class="navbar-link">TV Shows</a> </li>
+</ul>
+</nav>
+
+<!-----------------------------SEARCHBAR--------------------------->
+<div class="navbar-actions">
+<form action="/search" method = "post" class="navbar-form" autocomplete="off">
+<input autoComplete='off' type="text" name="search" placeholder="Search" class="navbar-form-search">
+<button class="navbar-form-btn">
+<ion-icon name="search-outline"></ion-icon>
+</button>
+<button class="navbar-form-close">
+<ion-icon name="close-circle-outline"></ion-icon>
+</button>
+</form>
+<!-----------------------------SEARCHBAR--------------------------->
+
+</header>
+
+<!-----------------------------MOVIE HEADER--------------------------->
+<main>
+
+<!------------MOVIES SECTION-CARD----------->
+
+<section class="banner">
+<div class="banner-card-person">
+<img src={{person['img']}} alt="" class="banner-img2">
+</div>
+<h2 class="bio-subtitle"> {{ person['dob']}}</h2> 
+<h2 class="bio-title">{{person['name']}}</h2>
+<div class="rating">{{""+person['work']+" "}}
+<i><h2 class="bio-text">{{person['bio']}}</h2></i>
+</div>
+</section>
+</main>
+
+
+
+<!-----------------------------FOOTER-SECTION--------------------------->
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<h3 class="navbar-brand">Movie<span style="color:red;">Base</span></h3>
+<p class="slogan">MovieBase is a state-of-the-art movie information system that finds you the perfect movie match
+</p>
+<div class="social-link">
+<a href="https://www.twitter.com/">
+<ion-icon name="logo-twitter"></ion-icon>
+</a>
+<a href="https://www.instagram.com/">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
+<a href="https://www.github.com/">
+<ion-icon name="logo-github"></ion-icon>
+</a>
+</div></div>
+<div class="footer-links">
+</div></div>
+<div class="footer-copyright">
+<div class="copyright">
+<p>&copy;2022 ZeusTV</p>
+</div>
+
+<div class="wrapper">
+<a href="#">Privacy policy</a>
+<a href="#">Terms and conditions</a>
+</div></div></footer></div>
+<!-----------------------------CLOSING HTML--------------------------->
+<script src="/https://damn.mostuselessboy.repl.co/assets/js/main.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+</body>
+</html>

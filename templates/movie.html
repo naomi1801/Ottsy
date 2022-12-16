@@ -1,0 +1,129 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-----------------------------MOVIE HEADER--------------------------->
+<main>
+
+<!------------MOVIES SECTION-CARD----------->
+
+<section class="banner">
+<div class="banner-card">
+<img src={{movie['img_hd']}} alt="" class="banner-img">
+<div class="card-content">
+<div class="card-info">
+</div>
+</div>
+</div>
+<h2 class="bio-subtitle"> {{ movie['type'] + ", "+movie['year']}}</h2> 
+<h2 class="bio-title">{{movie['title']}}</h2>
+<div class="rating">{{"★ "+movie['rating']+" "}}</div>
+<i><h2 class="bio-text">{{movie['bio']}}</h2></i>
+
+</section>
+
+</section>
+
+<section class="banner">
+  
+  <h2 class="bio-title">Trailer</h2>
+  <h3 class="bio-subtitle"> {{ movie['title'] + " Trailer"}}</h3> 
+
+  <div class="player">
+  <iframe class="responsive-iframe" src={{link}} allowfullscreen="true"></iframe>
+</div>
+</section>
+
+  <section class="banner">
+  <h2 class="bio-title">Cast</h2>
+  <h3 class="bio-subtitle"> {{ movie['title'] + " Cast Members"}}</h3> 
+<div class="movies-grid">
+{%for people in movie['cast']:%}
+<div class="movie-card">
+<a href={{"/person/?id="+ people['id']}}>
+<div class="card-head">
+<img src={{people['img']}} alt="" class="card-img">
+<div class="card-overlay">
+
+
+<div class="play">
+<ion-icon name="open-outline"></ion-icon>
+</div></div></div>
+<div class="card-body">
+<h3 class="card-title">{{people['name']}}</h3>
+</a>
+<div class="card-info">
+<span class="genre">{{people['char']}}</span>
+</div></div></div>
+{%endfor%}
+</section>
+
+
+
+
+<!-----------------------------MOVIE FILTER--------------------------->
+<section class="movies"id="movies">
+<h2 class="bio-title">Similar Movies</h2>
+<h3 class="bio-subtitle">{{"Movies like "+movie['title']}}</h3> 
+
+<!-----------------------------MOVIES SECTION--------------------------->
+<div class="movies-grid">
+
+<!------------MOVIES SECTION-CARD----------->
+{%for movie in similar_movies:%}
+<div class="movie-card">
+<a href={{"/movie/?id="+ movie['id']}}>
+<div class="card-head">
+<img src={{movie['img']}} alt="" class="card-img">
+<div class="card-overlay">
+<div class="rating">
+<ion-icon name="star-outline"></ion-icon>
+<span>{{movie['rating']}}</span>
+</div>
+
+<div class="play">
+<ion-icon name="play-circle-outline"></ion-icon>
+</div></div></div>
+<div class="card-body">
+<h3 class="card-title">{{movie['title']}}</h3>
+</a>
+<div class="card-info">
+<span class="genre">{{movie['type']}}</span>
+<span class="year">{{movie['year']}}</span>
+</div></div></div>
+{%endfor%}
+</div>
+</section>
+
+  
+</main>
+
+
+
+<!-----------------------------FOOTER-SECTION--------------------------->
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<h3 class="navbar-brand">Movie<span style="color:red;">Base</span></h3>
+<p class="slogan">MovieBase is a state-of-the-art movie information system that finds you the perfect movie match</p>
+<div class="social-link">
+<a href="https://www.twitter.com/">
+<ion-icon name="logo-twitter"></ion-icon>
+</a>
+<a href="https://www.instagram.com/">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
+<a href="https://www.github.com/">
+<ion-icon name="logo-github"></ion-icon>
+</a>
+</div></div>
+<div class="footer-links">
+</div></div>
+<div class="footer-copyright">
+<div class="copyright">
+<p>&copy;2022 MovieBase</p>
+</div>
+
+<div class="wrapper">
+<a href="#">Privacy policy</a>
+<a href="#">Terms and conditions</a>
+</div></div></footer></div>
+{% endblock %}

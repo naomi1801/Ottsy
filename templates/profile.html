@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Choose your Moood!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/9dce07a25d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+      .btn-square-md {
+        width: 115px !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        height: 115px !important;
+        text-align: center;
+        font-size: 12px;
+      }
+      .button {
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body class="bg-dark" style="color: #fff">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img
+          src="{{ url_for('static', filename='img/logo-white.png') }}"
+          width="100px"
+          height="100px"
+          alt=""
+          style="margin-left: 25px"
+        />
+      </a>
+    </nav>
+    <div class="container bg-dark mx-auto" style="margin-top: 150px">
+      <div class="d-flex justify-content-center text-center">
+        <div class="button">
+          <button type="button" class="btn btn-bg-warning btn-square-md">
+            <a href="{{ url_for('bprofile') }}"
+              ><i
+                class="fa fa-book fa-6x"
+                aria-hidden="true"
+                style="color: #fff"
+              ></i
+            ></a>
+          </button>
+          <p style="text-align: center">Reading</p>
+        </div>
+        <div class="button">
+          <button
+            type="button"
+            class="btn btn-bg-warning btn-square-md"
+            style="background-color: #ec4a89"
+          >
+            <a href="{{ url_for('handle') }}">
+              <i
+                class="fa fa-television fa-6x"
+                aria-hidden="true"
+                style="color: #fff"
+              ></i
+            ></a>
+          </button>
+          <p style="text-align: center">Watching</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

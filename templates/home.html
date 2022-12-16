@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block body %}
+<div class="mx-auto" style="width: 500px; margin-top: 200px">
+  <div style="text-align: center">
+    <h1>Welcome to Ottsy!</h1>
+    <p>
+      Unlimited movies, TV shows and more. Watch anywhere. Cancel anytime. Ready
+      to watch? Enter your email to create or restart your membership.
+    </p>
+    <form>
+      <button class="btn btn-primary my-2 my-sm-0 ml-auto">
+        <a role="button" href="{{url_for('register')}}" style="color: #fff"
+          >Get Started <i class="fa fa-arrow-right" aria-hidden="true"></i
+        ></a>
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,124 @@
+{% extends "layout.html" %} {% block body %}
+
+<!-----------------------------MOVIE HEADER--------------------------->
+<main>
+<!-----------------------------MOVIE FILTER--------------------------->
+<section class="movies">
+<div class="filter-bar">
+<div class="filter-dropdowns">
+<select name="genre" class="genre">
+<option value="all genres">All genres</option>
+<option value="action">Action</option>
+<option value="adventure">Adventure</option>
+<option value="animal">Animal</option>
+<option value="animation">Animation</option>
+<option value="biography">Biography</option>
+</select>
+<select name="year" class="year">
+<option value="all years">All the years</option>
+<option value="2022">2022</option>
+<option value="2020-2021">2020-2021</option>
+<option value="2010-2019">2010-2019</option>
+<option value="2000-2009">2000-2009</option>
+<option value="1980-1999">1980-1999</option>
+</select>
+</div>
+<div class="filter-radios">
+<input type="radio" name="grade" id="featured" checked>
+<label for="featured">Featured</label>
+<input type="radio" name="grade" id="popular">
+<label for="popular">Popular</label>
+<input type="radio" name="grade" id="newest">
+<label for="newest">Newest</label>
+<div class="checked-radio-bg"></div>
+</div>
+</div>
+
+
+<!-----------------------------MOVIES SECTION--------------------------->
+  <h2 class="section-heading">Movies</h2>
+
+<div class="movies-grid">
+
+<!------------MOVIES SECTION-CARD----------->
+{%for movie in movies:%}
+<div class="movie-card">
+<a href={{"/movie/?id="+ movie['id']}}>
+<div class="card-head">
+<img src={{movie['img']}} alt="" class="card-img">
+<div class="card-overlay">
+<div class="rating">
+<ion-icon name="star-outline"></ion-icon>
+<span>{{movie['rating']}}</span>
+</div>
+<div class="play">
+<ion-icon name="play-circle-outline"></ion-icon>
+</div></div></div>
+<div class="card-body">
+<h3 class="card-title">{{movie['title']}}</h3>
+</a>
+<div class="card-info">
+<span class="genre">{{movie['type']}}</span>
+<span class="year">{{movie['year']}}</span>
+ </div></div></div>
+{%endfor%}
+<!------------MOVIES SECTION-CARD/CLOSE-------->
+</div>
+</section>
+<!---------------------------TV SECTION----------------------->
+<section class="category" id="category">
+<h2 class="section-heading">TV Shows</h2>
+<div class="category-grid">
+{%for movie in tv_shows:%}
+<a href={{"/tvshow/?id="+ movie['id']}}>
+<div class="category-card">
+<img src={{movie['img']}} alt="" class="card-img">
+<div class="name">{{movie['name']}}</div>
+</div>
+  </a>
+<div class="card-info">
+<h3 class="card-title">{{movie['title']}}</h3>
+  <div class="footer-brand">
+<h3 class="bio-subtitle2">{{movie['year']}}</h3>
+<h4 class="ratting">{{movie['rating']+" / 10"}}</h4>
+    </div>
+</div>
+{%endfor%}
+ </div></div></div>
+</div>
+</section>
+
+
+</main>
+
+
+
+<!-----------------------------FOOTER-SECTION--------------------------->
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<h3 class="navbar-brand">Movie<span style="color:red;">Base</span></h3>
+<p class="slogan">MovieBase is a state-of-the-art movie information system that finds you the perfect movie match
+</p>
+<div class="social-link">
+<a href="https://www.twitter.com/">
+<ion-icon name="logo-twitter"></ion-icon>
+</a>
+<a href="https://www.instagram.com/">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
+<a href="https://www.github.com/">
+<ion-icon name="logo-github"></ion-icon>
+</a>
+</div></div>
+<div class="footer-links">
+</div></div>
+<div class="footer-copyright">
+<div class="copyright">
+<p>&copy;2022 MovieBase</p>
+</div>
+<div class="wrapper">
+<a href="#">Privacy policy</a>
+<a href="#">Terms and conditions</a>
+</div></div></footer></div>
+{% endblock %}
